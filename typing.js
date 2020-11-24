@@ -25,5 +25,36 @@ const wordChar;
 const random;
 
 function ready() {
+  readyTime = 3;
+  scored_is.innerHTML = "";
+  start_button.style.visibility = "hidden";
+  const readyTimer = setInterval(() => {
+    count.innerHTML = readyTimer;
+    readyTime--;
+    if (readyTime < 0) {
+      clearInterval(readyTimer);
+      gameStart();
+    }
+  })
+}
+
+function gameStart() {
+  score = 0.0;
+  mistake = 0;
+  correct = 0;
+  wordDisplay();
+  const time_remaining = timeLimit;
+  const gameTimer = setInterval(() => {
+    count.innerHTML = "残り時間： " + time_remaining;
+    time_remaining--;
+    if (time_remaining <= 0) {
+      clearInterval(gameTimer);
+      finish();
+    }
+  })
+}
+
+function wordDisplay() {
+  random = Math.floor(Math.random() * wordList.length);
   
 }
