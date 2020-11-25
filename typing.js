@@ -56,5 +56,10 @@ function gameStart() {
 
 function wordDisplay() {
   random = Math.floor(Math.random() * wordList.length);
-  
+  word.innerHTML = wordList[random];
+  japanese.innerHTML = wordListJapanese[random];
+  charInsort();
+}
+function charInsort() {
+  word_char = wordList[random].charAt(char_num);
 }
