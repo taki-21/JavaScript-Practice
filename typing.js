@@ -60,6 +60,19 @@ function wordDisplay() {
   japanese.innerHTML = wordListJapanese[random];
   charInsort();
 }
+
 function charInsort() {
   word_char = wordList[random].charAt(char_num);
+}
+
+function finish() {
+  score = Math.floor(Math.pow(correct, 2) * Math.pow((correct / (correct + mistake)), 5));
+  scoredis.innerHTML = "スコア:" + score + "点" + "<hr>正タイプ数:" + correct + "<br>ミスタイプ数:" + mistake + "<br>正答率" + (correct / (correct + mistake) * 100).toFixed(1) + "%";
+  count.innerHTML = "";
+  word.innerHTML = "";
+  japanese.innerHTML = "";
+  start_button.style.visibility = "visible";
+  word_char = 0;
+  random = 0;
+  char_num = 0;
 }
