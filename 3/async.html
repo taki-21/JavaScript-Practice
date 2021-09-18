@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 関数
+    function test1() {
+      return '関数'
+    }
+    console.log(test1())
+
+    // 非同期 関数
+    // 戻り値 Promise (状態(ok, ng)
+    // return => ok
+    // throw => ng
+    async function aTest() {
+      return '非同期関数1'
+    }
+    console.log(aTest().then(value => {
+      console.log(value)
+    }))
+
+    // await => asyncの中でのみ使える
+
+  </script>
+</body>
+
+</html>
